@@ -1,5 +1,4 @@
-
-function ClassCard({ fitnessClass }) {
+function ClassCard({ fitnessClass, onViewDetails }) {
   return (
     <div className="class-card">
       <span className="category">{fitnessClass.category}</span>
@@ -17,7 +16,9 @@ function ClassCard({ fitnessClass }) {
 
       <div className="class-bottom">
         <strong>PKR {fitnessClass.price}</strong>
-        <button>View Details</button>
+        <button onClick={() => onViewDetails(fitnessClass)}>
+          View Details
+        </button>
       </div>
     </div>
   );

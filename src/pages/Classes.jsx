@@ -2,11 +2,13 @@
 import { useState } from "react";
 import classes from "../data/classes";
 import ClassCard from "../components/ClassCard";
+import ClassDetails from "./ClassDetails";
 
-function Classes() {
+function Classes({ onAddToBooking }) {
   const [search, setSearch] = useState("");
   const [category, setCategory] = useState("All");
   const [sort, setSort] = useState("default");
+  const [selectedClass, setSelectedClass] = useState(null);
 
   const categories = ["All", ...new Set(classes.map(item => item.category))];
 
@@ -21,6 +23,16 @@ function Classes() {
     filteredClasses.sort((a, b) => a.price - b.price);
   } else if (sort === "high") {
     filteredClasses.sort((a, b) => b.price - a.price);
+  }
+
+  if (selectedClass) {
+    return (
+      <ClassDetails
+        classItem={selectedClass}
+        onBack={() => setSelectedClass(null)}
+        onAddToBooking={onAddToBooking}
+      />
+    );
   }
 
   return (
@@ -52,7 +64,11 @@ function Classes() {
       <div className="class-grid">
         {filteredClasses.length > 0 ? (
           filteredClasses.map(item => (
-            <ClassCard key={item.id} fitnessClass={item} />
+            <ClassCard
+              key={item.id || item.name}
+              fitnessClass={item}
+              onViewDetails={setSelectedClass}
+            />
           ))
         ) : (
           <p>No classes found.</p>
