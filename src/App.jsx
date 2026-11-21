@@ -9,25 +9,46 @@ import Booking from "./pages/Booking";
 function App() {
   const [bookingItems, setBookingItems] = useState([]);
 
-  const addToBooking = (fitnessClass) => {
-    setBookingItems(previousItems => {
-      const existingItem = previousItems.find(
-        item => item.name === fitnessClass.name
-      );
 
-      if (existingItem) {
-        return previousItems.map(item =>
-          item.name === fitnessClass.name
-            ? { ...item, quantity: item.quantity + 1 }
-            : item
-        );
+const addToBooking = (fitnessClass) => {
+  const existingItem = bookingItems.find(
+    item => item.name === fitnessClass.name
+  );
+
+  const currentQuantity = existingItem ? existingItem.quantity : 0;
+
+  if (currentQuantity >= 4) {
+    alert("Maximum 4 places allowed per class.");
+    return;
+  }
+
+  if (currentQuantity >= fitnessClass.seats) {
+    alert("No more seats available.");
+    return;
+  }
+
+  if (existingItem) {
+    setBookingItems(items =>
+      items.map(item =>
+        item.name === fitnessClass.name
+          ? { ...item, quantity: item.quantity + 1 }
+          : item
+      )
+    );
+  } else {
+    setBookingItems(items => [
+      ...items,
+      {
+        ...fitnessClass,
+        quantity: 1,
+        experienceLevel: fitnessClass.level
       }
+    ]);
+  }
 
-      return [...previousItems, { ...fitnessClass, quantity: 1 }];
-    });
+  alert(`${fitnessClass.name} added to booking!`);
+};
 
-    alert(`${fitnessClass.name} added to booking!`);
-  };
 
   const increaseQuantity = (name) => {
     setBookingItems(items =>
@@ -56,7 +77,15 @@ function App() {
       items.filter(item => item.name !== name)
     );
   };
-
+const updateExperience = (name, experienceLevel) => {
+  setBookingItems(items =>
+    items.map(item =>
+      item.name === name
+        ? { ...item, experienceLevel }
+        : item
+    )
+  );
+};
   return (
     <>
       <Navbar />
@@ -66,11 +95,12 @@ function App() {
       <Classes onAddToBooking={addToBooking} />
 
       <Booking
-        bookingItems={bookingItems}
-        onIncrease={increaseQuantity}
-        onDecrease={decreaseQuantity}
-        onRemove={removeItem}
-      />
+  bookingItems={bookingItems}
+  onIncrease={increaseQuantity}
+  onDecrease={decreaseQuantity}
+  onRemove={removeItem}
+  onUpdateExperience={updateExperience}
+/>
 
       <Footer />
     </>

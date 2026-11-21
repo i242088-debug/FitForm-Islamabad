@@ -273,3 +273,38 @@ body {
     flex-wrap: wrap;
   }
 }
+.booking-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 500px;
+  margin-top: 30px;
+  padding: 25px;
+  background: white;
+  border-radius: 10px;
+}
+
+.booking-form input,
+.booking-form select {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.booking-form button {
+  padding: 12px;
+  background: #222;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.form-error {
+  color: red;
+  margin-top: 12px;
+}
+
+.booking-summary {
+  margin-top: 25px;
+}
