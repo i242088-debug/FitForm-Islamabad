@@ -2,7 +2,14 @@
 import { useState } from "react";
 import BookingForm from "../components/BookingForm";
 
-function Booking({ bookingItems, onIncrease, onDecrease, onRemove, onUpdateExperience }) {
+function Booking({
+  bookingItems,
+  onIncrease,
+  onDecrease,
+  onRemove,
+  onUpdateExperience,
+  onClear
+}) {
   const [error, setError] = useState("");
   const [confirmation, setConfirmation] = useState(null);
 
@@ -87,6 +94,10 @@ function Booking({ bookingItems, onIncrease, onDecrease, onRemove, onUpdateExper
   return (
     <section className="booking-page">
       <h1>My Booking</h1>
+
+      {bookingItems.length > 0 && (
+        <button onClick={onClear}>Clear All Bookings</button>
+      )}
 
       {bookingItems.length === 0 ? (
         <p>Your booking cart is empty.</p>
