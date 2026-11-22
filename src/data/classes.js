@@ -1,71 +1,14 @@
-
-const classes = [
-  {
-    id: 1,
-    name: "Strength Training",
-    category: "Strength",
-    coach: "Ahmed Khan",
-    duration: 60,
-    price: 1800,
-    level: "Beginner",
-    seats: 8,
-    description: "Build strength and improve your fitness with guided exercises."
-  },
-  {
-    id: 2,
-    name: "Morning Yoga",
-    category: "Yoga",
-    coach: "Sara Ali",
-    duration: 45,
-    price: 1500,
-    level: "Beginner",
-    seats: 10,
-    description: "Improve flexibility and relax your mind through yoga."
-  },
-  {
-    id: 3,
-    name: "Cardio Blast",
-    category: "Cardio",
-    coach: "Usman Malik",
-    duration: 45,
-    price: 1600,
-    level: "Intermediate",
-    seats: 6,
-    description: "An energetic workout designed to improve endurance."
-  },
-  {
-    id: 4,
-    name: "Pilates Basics",
-    category: "Pilates",
-    coach: "Ayesha Noor",
-    duration: 50,
-    price: 1700,
-    level: "Beginner",
-    seats: 9,
-    description: "Focus on balance, posture and controlled movement."
-  },
-  {
-    id: 5,
-    name: "Power Yoga",
-    category: "Yoga",
-    coach: "Sara Ali",
-    duration: 60,
-    price: 2000,
-    level: "Advanced",
-    seats: 5,
-    description: "A challenging yoga session combining strength and flexibility."
-  },
-  {
-    id: 6,
-    name: "Dance Fitness",
-    category: "Dance",
-    coach: "Hira Ahmed",
-    duration: 50,
-    price: 1400,
-    level: "Intermediate",
-    seats: 12,
-    description: "Enjoy an energetic dance-based fitness session."
-  }
+export const classes = [
+  { id: "strength-101", name: "Strength Foundations", category: "Strength", level: "Beginner", duration: 50, price: 1800, trainer: "Areeba Khan", day: "Monday", time: "6:30 PM", location: "F-6 Studio", remainingSeats: 8, intensity: "Moderate", description: "Learn safe movement patterns and build a steady strength routine with guided coaching.", includes: ["Technique coaching", "Small group", "Equipment provided"] },
+  { id: "flow-yoga", name: "Sunrise Flow Yoga", category: "Yoga", level: "Beginner", duration: 45, price: 1400, trainer: "Hira Malik", day: "Tuesday", time: "7:00 AM", location: "F-6 Studio", remainingSeats: 6, intensity: "Gentle", description: "A calm, accessible flow focused on mobility, balance and mindful movement.", includes: ["Yoga mats", "Mobility work", "Beginner friendly"] },
+  { id: "hiit-circuit", name: "HIIT Circuit", category: "Cardio", level: "Advanced", duration: 40, price: 2200, trainer: "Usman Raza", day: "Tuesday", time: "6:00 PM", location: "F-6 Studio", remainingSeats: 5, intensity: "High", description: "A coached interval session combining bodyweight and cardio stations.", includes: ["Timed intervals", "Coach supervision", "Bring water"] },
+  { id: "pilates-core", name: "Pilates Core Lab", category: "Pilates", level: "Intermediate", duration: 50, price: 1900, trainer: "Maham Ali", day: "Wednesday", time: "5:30 PM", location: "F-6 Studio", remainingSeats: 7, intensity: "Moderate", description: "Controlled mat exercises that develop core stability, posture and body awareness.", includes: ["Mat-based", "Form guidance", "Small group"] },
+  { id: "boxing-basics", name: "Boxing Basics", category: "Cardio", level: "Beginner", duration: 45, price: 2000, trainer: "Saad Ahmed", day: "Thursday", time: "6:30 PM", location: "F-6 Studio", remainingSeats: 4, intensity: "High", description: "Learn fundamental boxing footwork and combinations in a non-contact class.", includes: ["Non-contact", "Gloves provided", "Technique first"] },
+  { id: "mobility-reset", name: "Mobility Reset", category: "Recovery", level: "Beginner", duration: 35, price: 1200, trainer: "Hira Malik", day: "Friday", time: "5:00 PM", location: "F-6 Studio", remainingSeats: 9, intensity: "Gentle", description: "A guided session to practise comfortable range of motion and everyday mobility.", includes: ["Low impact", "Mats provided", "All-level modifications"] },
+  { id: "cycle-ride", name: "Indoor Cycle Ride", category: "Cardio", level: "Intermediate", duration: 45, price: 1700, trainer: "Daniyal Shah", day: "Saturday", time: "9:00 AM", location: "F-6 Studio", remainingSeats: 3, intensity: "High", description: "A music-led indoor cycling session with adjustable resistance and coaching.", includes: ["Bike provided", "Adjustable pace", "Bring water"] },
+  { id: "barre-balance", name: "Barre & Balance", category: "Strength", level: "Intermediate", duration: 50, price: 1850, trainer: "Maham Ali", day: "Saturday", time: "11:00 AM", location: "F-6 Studio", remainingSeats: 6, intensity: "Moderate", description: "Low-impact strength and balance exercises using controlled repetitions.", includes: ["Low impact", "Support rail", "Technique coaching"] },
+  { id: "power-yoga", name: "Power Yoga", category: "Yoga", level: "Advanced", duration: 55, price: 2100, trainer: "Hira Malik", day: "Sunday", time: "8:00 AM", location: "F-6 Studio", remainingSeats: 2, intensity: "High", description: "A stronger flowing sequence for participants comfortable with yoga fundamentals.", includes: ["Dynamic flow", "Mats provided", "Advanced variations"] },
+  { id: "dance-fit", name: "Dance Fit", category: "Dance", level: "Beginner", duration: 45, price: 1600, trainer: "Areeba Khan", day: "Sunday", time: "5:00 PM", location: "F-6 Studio", remainingSeats: 10, intensity: "Moderate", description: "A fun, beginner-friendly movement class built around easy-to-follow routines.", includes: ["No experience needed", "Follow-along", "Bring water"] },
+  { id: "functional-move", name: "Functional Movement", category: "Strength", level: "Intermediate", duration: 50, price: 1950, trainer: "Usman Raza", day: "Monday", time: "7:30 PM", location: "F-6 Studio", remainingSeats: 5, intensity: "Moderate", description: "Practise coordinated movement patterns with coaching and scalable exercises.", includes: ["Movement coaching", "Equipment provided", "Small group"] },
+  { id: "stretch-and-breathe", name: "Stretch & Breathe", category: "Recovery", level: "Beginner", duration: 30, price: 1100, trainer: "Maham Ali", day: "Friday", time: "7:00 PM", location: "F-6 Studio", remainingSeats: 8, intensity: "Gentle", description: "A relaxed session combining comfortable stretches and breathing exercises.", includes: ["Gentle pace", "Mats provided", "All levels"] }
 ];
-
-export default classes;
