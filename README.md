@@ -1,13 +1,12 @@
 # FitForm Islamabad — React class booking website
 
 **Course:** CS4032 Web Programming — Assignment 02  
-**Student:** [Your full name]  
-**Roll number:** [Your roll number]  
-**Section:** [Your section]  
+**Student:** Fatima azhar 
+**Roll number:** 24i-2088  
+**Section:** C  
 **Business:** FitForm Islamabad  
-**Repository:** [Add public GitHub URL]  
-**Deployment:** [Add deployed URL]  
-**Final commit:** [Add final commit hash]
+**Repository:** (https://github.com/i242088-debug/FitForm-Islamabad) 
+
 
 ## Project overview
 

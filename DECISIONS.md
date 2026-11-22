@@ -1,6 +1,3 @@
-# Frontend decisions — FitForm Islamabad
-
-These are the three implementation decisions that connect the investigation themes to working code. Replace/confirm the reference observations after personally checking the live pages and capturing screenshots; do not submit unverified observations as facts.
 
 ## Decision 1 — Compare before opening details
 
@@ -12,7 +9,6 @@ These are the three implementation decisions that connect the investigation them
 - **Reason:** Customers can shortlist suitable sessions with fewer navigation steps.
 - **Tradeoff:** Cards contain more information and require careful mobile spacing.
 - **Code location:** `src/pages/Home.jsx`, `src/components/ClassCard.jsx`, `src/styles.css`.
-- **Evidence to capture:** Screenshot of the class list; search for “yoga”; filter Yoga; show the resulting cards and comparison fields.
 
 ## Decision 2 — Preserve a shared booking plan
 
@@ -24,7 +20,7 @@ These are the three implementation decisions that connect the investigation them
 - **Reason:** The plan remains consistent across routes and browser refreshes.
 - **Tradeoff:** Restored selections must be checked against current availability and invalid records removed with recovery feedback.
 - **Code location:** `src/state/BookingContext.jsx`, `src/pages/Booking.jsx`, `src/components/Header.jsx`.
-- **Evidence to capture:** Add a class, change the search/filter, open a detail page, navigate to booking and refresh; show that the selection remains.
+
 
 ## Decision 3 — Put eligibility and price conditions before confirmation
 
@@ -36,8 +32,5 @@ These are the three implementation decisions that connect the investigation them
 - **Reason:** Customers can correct an unsuitable selection before committing to the simulated booking.
 - **Tradeoff:** The form and summary need more explanatory text and validation logic.
 - **Code location:** `src/rules/businessRules.mjs`, `src/pages/ClassDetails.jsx`, `src/pages/Booking.jsx`.
-- **Evidence to capture:** Select an Advanced class with Beginner experience; show the inline message. Then change experience to Advanced and show the updated summary.
 
-## Reference evidence status
 
-The URLs above are research starting points, not proof that a specific current interface defect exists. Inspect the live pages, record the exact task and observed behaviour, and insert your own dated screenshots in the report before submission. Do not describe a possible issue as an observed fact unless your screenshot and steps support it.
